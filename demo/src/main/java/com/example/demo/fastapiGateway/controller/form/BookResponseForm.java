@@ -1,15 +1,23 @@
 package com.example.demo.fastapiGateway.controller.form;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 @Getter
 @ToString
-@RequiredArgsConstructor
 public class BookResponseForm {
-    final private Long id;
-    final private String name;
-    final private String publishers;
-    final private String isbn;
+    private Long id;
+    private String name;
+    private String publishers;
+    private String isbn;
+
+    public BookResponseForm() {
+    }
+
+    public BookResponseForm(Long id, String name, String publishers, String isbn) {
+        this.id = id;
+        this.name = name;
+        this.publishers = publishers;
+        this.isbn = isbn;
+    }
 }

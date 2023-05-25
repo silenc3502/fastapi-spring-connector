@@ -47,9 +47,9 @@ public class FastApiController {
 
     @GetMapping("/fastapi-entity-request")
     public void fastApiEntityRequest () {
-        log.info("fastapi integer request");
+        log.info("fastapi entity request");
 
-        final String FASTAPI_REQUEST_URL = "http://localhost:8000/request-entity-data";
+        final String FASTAPI_REQUEST_URL = "http://localhost:8000/request-entity-data/{id}";
 
         fastApiService.entityRequest(FASTAPI_REQUEST_URL);
     }
