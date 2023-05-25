@@ -1,5 +1,6 @@
 package com.example.demo.fastapiGateway.service;
 
+import com.example.demo.fastapiGateway.controller.form.BookResponseForm;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -42,5 +43,15 @@ public class FastApiServiceImpl implements FastApiService {
         );
 
         log.info("result = " + result);
+    }
+
+    @Override
+    public void entityRequest(String fastapiRequestUrl) {
+        RestTemplate restTemplate = new RestTemplate();
+
+        BookResponseForm responseForm = restTemplate.getForEntity(
+                fastapiRequestUrl, BookResponseForm.class, 1).getBody();
+
+        log.info("result = " + responseForm);
     }
 }
